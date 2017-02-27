@@ -54,7 +54,10 @@ function ObjectID(arg) {
     get: function() { return buf.map(hex.bind(this, 2)).join(''); }
   });
 }
-module.exports = ObjectID;
+
+if ('undefined' !== typeof module) {
+  module.exports = ObjectID;
+}
 ObjectID.generate = generate;
 
 /**
